@@ -8,14 +8,20 @@ const calc = (size, material, options, promocode, result) => {
     let sum = 0;
 
     const calcFunc = () => {
-        sum = Math.round((+sizeBlock.value) * (+materialBlock.value) + (+optionsBlock.value));
-        if (sizeBlock.value == '' || materialBlock.value == '') {
+        if ([sizeBlock, materialBlock].some(item => item.value == '')) {
             resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
-        } else if (promocodeBlock.value === 'IWANTPOPART') {
+        }
+
+        if ([sizeBlock, materialBlock].every(item => item.value != '') && promocodeBlock.value === 'IWANTPOPART') {
             resultBlock.textContent = Math.round(sum * 0.7);
         } else {
+            sum = Math.round((+sizeBlock.value) * (+materialBlock.value) + (+optionsBlock.value));
             resultBlock.textContent = sum;
         }
+
+        /* if (sizeBlock.value == '' || materialBlock.value == '') {
+            resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
+        } */
     };
 
     sizeBlock.addEventListener('change', calcFunc);

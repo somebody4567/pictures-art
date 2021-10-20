@@ -4576,15 +4576,24 @@ var calc = function calc(size, material, options, promocode, result) {
   var sum = 0;
 
   var calcFunc = function calcFunc() {
-    sum = Math.round(+sizeBlock.value * +materialBlock.value + +optionsBlock.value);
-
-    if (sizeBlock.value == '' || materialBlock.value == '') {
+    if ([sizeBlock, materialBlock].some(function (item) {
+      return item.value == '';
+    })) {
       resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
-    } else if (promocodeBlock.value === 'IWANTPOPART') {
+    }
+
+    if ([sizeBlock, materialBlock].every(function (item) {
+      return item.value != '';
+    }) && promocodeBlock.value === 'IWANTPOPART') {
       resultBlock.textContent = Math.round(sum * 0.7);
     } else {
+      sum = Math.round(+sizeBlock.value * +materialBlock.value + +optionsBlock.value);
       resultBlock.textContent = sum;
     }
+    /* if (sizeBlock.value == '' || materialBlock.value == '') {
+        resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
+    } */
+
   };
 
   sizeBlock.addEventListener('change', calcFunc);
