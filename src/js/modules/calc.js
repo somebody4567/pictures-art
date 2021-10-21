@@ -29,6 +29,10 @@ const calc = (size, material, options, promocode, result) => {
     materialBlock.addEventListener('change', calcFunc);
     optionsBlock.addEventListener('change', calcFunc);
     promocodeBlock.addEventListener('input', calcFunc);
+    promocodeBlock.closest('.calc_form').addEventListener('submit', () => {
+        promocodeBlock.style.color = '';
+        resultBlock.style.color = '';
+    });
 };
 
 export default calc;

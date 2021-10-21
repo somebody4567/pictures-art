@@ -4,14 +4,14 @@ export default function showPicture () {
     sizesBlock.forEach((item, i) => {
         item.addEventListener('mouseenter', () => {
             const innerParagraphs = item.querySelectorAll('p'),
-                  innerImg = item.querySelector('img');
-                  innerImg.src = `assets/img/sizes-${i + 1}-1.png`;
-                  innerParagraphs.forEach(el => {
-                    el.style.display = 'none';
-                    if (el.classList.contains('sizes-hit')) {
-                        el.style.display = 'block';
-                    }
-                });
+            innerImg = item.querySelector('img');
+            innerImg.src = `assets/img/sizes-${i + 1}-1.png`;
+            innerParagraphs.forEach(el => {
+                el.style.display = 'none';
+                if (el.classList.contains('sizes-hit')) {
+                    el.style.display = 'block';
+                }
+            });
         });
         
         item.addEventListener('mouseleave', () => {
