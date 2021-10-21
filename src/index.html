@@ -18,16 +18,16 @@
 				</button>
 				<ul class="burger-menu">
 					<li>
-						<a href="#">Картина из вашего фото</a>
+						<a href="#portfolio">Картина из вашего фото</a>
 					</li>
 					<li>
-						<a href="#">Готовые картины</a>
+						<a href="#styles">Готовые картины</a>
 					</li>
 					<li>
 						<a href="#">Идеи подарков</a>
 					</li>
 					<li>
-						<a href="#">Покупателям</a>
+						<a href="#scheme">Покупателям</a>
 					</li>
 				</ul>
 			</div>
@@ -239,23 +239,23 @@
 							<input type="file" name="upload" multiple accept="image/*">
 						</div>
 						<select id="size">
-							<option>Выберите размер картины</option>
-							<option value="100" data-size="1000">40x50</option>
-							<option value="200" data-size="1500">50x70</option>
-							<option value="200" data-size="2000">70x70</option>
-							<option value="200" data-size="3000">70x100</option>
+							<option value="">Выберите размер картины</option>
+							<option value="4" data-size="1000">40x50</option>
+							<option value="5" data-size="1500">50x70</option>
+							<option value="7" data-size="2000">70x70</option>
+							<option value="10" data-size="3000">70x100</option>
 						</select>
 						<select id="material">
-							<option>Выберите материал картины</option>
-							<option value="5000" data-material="1000"  title="Изящный, позволяет легко создавать текстуру, подходит для декоративных картин маслом.">Холст из волокна</option>
-							<option data-material="2000"  title="Достаточно грубый и создает ощущение реальности, подходит для классических пейзажей, натюрмортов и портретов.">Льняной холст</option>
-							<option data-material="3000" title="Изящный, подходит для всех типов реалистичных портретов.">Холст из натурального хлопка</option>
+							<option value="">Выберите материал картины</option>
+							<option value="1000" data-material="1000"  title="Изящный, позволяет легко создавать текстуру, подходит для декоративных картин маслом.">Холст из волокна</option>
+							<option value="1200" data-material="2000"  title="Достаточно грубый и создает ощущение реальности, подходит для классических пейзажей, натюрмортов и портретов.">Льняной холст</option>
+							<option value="1500" data-material="3000" title="Изящный, подходит для всех типов реалистичных портретов.">Холст из натурального хлопка</option>
 						</select>
 						<select id="options">
-							<option >Дополнительные услуги</option>
-							<option data-service="1000">Покрытие арт-гелем</option>
-							<option data-service="2000">Экспресс-изготовление</option>
-							<option data-service="500">Доставка готовых работ </option>
+							<option value="">Дополнительные услуги</option>
+							<option value="1000" data-service="1000">Покрытие арт-гелем</option>
+							<option value="2000" data-service="2000">Экспресс-изготовление</option>
+							<option value="500" data-service="500">Доставка готовых работ </option>
 						</select>
 						<input type="text" class="promocode" placeholder="Введите ваш промокод">
 						<div class="calc-price">Для расчета нужно выбрать размер картины и материал картины</div>
@@ -494,7 +494,7 @@
 	</section>
 	<div class="feedback">
 		<div class="container">
-			<div class="feedback-slider" style="position:relative; height: 400px;">
+			<div class="feedback-slider" style="position: relative;">
 				<button class="main-slider-btn main-prev-btn">
 					<img src="assets/img/left-arr.png" alt="left">
 				</button>

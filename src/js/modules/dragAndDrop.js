@@ -1,25 +1,11 @@
 import postData from "../service/workWithServer";
 
 export default function dragAndDrop() {
-
-    // drag-событие работает пока пользователь перетаскивает элемент или выделяет текст **
-    // dragend - событие, которое срабатывает когда пользователь отпускает кнопку мыши, нажимает Escape **  
-    // dragenter срабатывает, когда перетаскиваемый элемент попадает в допустимую цель сброса
-    // dragleave срабатывает, когда перетаскиваемый элемент покидает допустимую цель сброса
-    // dragexit срабатывает, когда элемент больше не является целью операции перетаскивания. **
-    // dragover похож на dragenter, только срабатывает чаще
-    // dragstart срабатывает, когда  пользователь начал перетаскивать элемент.  **
-    // drop срабатывает, когда ЭЛЕМЕНТ СБРОШЕН В ДОПУСТИМУЮ ОБЛАСТЬ
-
-    // события с ** будут работать только с элементами на странице, они не будут работать с файлами из ОС
-
-    // Примечание: При перемещении файла из операционной системы в браузер ни событие dragstart, ни dragend не вызывается.
-
     const fileInputs = document.querySelectorAll('[name="upload"]');
 
     ['dragenter', 'dragleave', 'dragover', 'drop'].forEach(eventName => {
         fileInputs.forEach(input => {
-            input.addEventListener(eventName, preventDefaults, false);   // Это drag&drop с файлом из ОС.
+            input.addEventListener(eventName, preventDefaults, false);   
         });
     });
 
@@ -43,7 +29,6 @@ export default function dragAndDrop() {
                 .finally(() => {
                     input.previousElementSibling.textContent = 'Файл не выбран';
                 });
-                
             }
         });
     });

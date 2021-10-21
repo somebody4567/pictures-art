@@ -47,12 +47,12 @@ function slider(slides, dir, prev, next) {
             paused = setInterval(function() {
                 plusSlides(1);
                 items[slideIndex - 1].classList.add('fadeInDown');
-            }, 3000);
+            }, 4000);
         } else {
             paused = setInterval(function() {
                 plusSlides(1);
                 items[slideIndex - 1].classList.add('slideInLeft');
-            }, 3000);
+            }, 8000);
         }
     }
     activateAnimation();

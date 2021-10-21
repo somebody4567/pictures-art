@@ -137,6 +137,7 @@ h4 {
   right: 2rem;
   cursor: pointer;
 }
+
 .header .container {
   padding: 0;
 }
@@ -387,6 +388,9 @@ h4 {
   padding: 1.5rem 4rem;
   margin-bottom: 7rem;
 }
+
+
+
 .main-slider-btn {
   position: absolute;
   top: 50%;
@@ -399,6 +403,7 @@ h4 {
   background-color: transparent;
 }
 .main-slider-btn img {
+  pointer-events: none;
   width: 100%;
 }
 .main-prev-btn {
@@ -566,6 +571,7 @@ h4 {
   text-align: center;
   position: relative;
   z-index: -1000;
+  font-weight: 800;
 }
 .calc .button-order {
   margin-top: 6rem;
@@ -862,17 +868,26 @@ h4 {
 .promo-2 img {
   max-width: 100%;
   position: relative;
-  right: -10rem;
 }
 .feedback {
+  min-height: 500px;
   background-color: #f7e7e6;
   padding: 9rem 0;
 }
+.feedback-slider {
+  height: 400px;
+}
+
 .feedback-slider-item {
   padding-bottom: 5rem;
 }
 .feedback-block {
   position: relative;
+  width: 100%;
+}
+
+.feedback-block img {
+  width: 100%;
 }
 .feedback-block .button-order {
   position: absolute;
@@ -954,7 +969,7 @@ h4 {
   overflow: visible;
   padding: 3rem 4rem;
   margin-top: 1rem;
-  max-height: 200px;
+  max-height: 280px;
 }
 
 .often-questions p.active-style span {
@@ -1005,6 +1020,7 @@ h4 {
   position: absolute;
   bottom: 0;
   right: 5%;
+  z-index: -1;
 }
 .often-questions .spirt {
   position: absolute;
@@ -1415,6 +1431,9 @@ h4 {
   .promo h2 {
     line-height: 1.1;
   }
+  .promo-2-block h2 {
+    font-size: 3.5rem;
+  }
   .card .p-heading {
     margin: 3rem 0 4rem 0;
   }
@@ -1572,7 +1591,6 @@ h4 {
   }
   .calc select {
     position: relative;
-    left: 30%;
   }
   .calc .button-transparent {
     margin: 4rem auto;
@@ -1584,6 +1602,9 @@ h4 {
     max-width: 30rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .main-slider img{
+    width: 100%;
   }
   .card-block {
     padding: 5rem;
@@ -1633,8 +1654,23 @@ h4 {
   .card-3 img {
     float: right;
   }
+  .feedback {
+    padding: 3rem 0;
+  }
+  .feedback-slider {
+    height: 520px;
+  }
   .feedback-slider-item {
     padding-bottom: 0;
+  }
+  .feedback-block {
+    display: flex;
+    justify-content: center;
+  }
+
+  .feedback-block img {
+    width: 400px;
+    height: 300px;
   }
   .feedback-heading {
     margin-top: 6rem;
@@ -1707,6 +1743,19 @@ h4 {
   }
   .promo h2 {
     margin: 3rem 0;
+  }
+  .feedback-slider {
+    height: 400px;
+  }
+  .feedback-slider-item {
+    height: 300px;
+  }
+  .feedback-block {
+    height: 300px;
+  }
+  .feedback-block img {
+    width: 400px;
+    height: 100%;
   }
   .promo p {
     font-size: 1.5rem;
@@ -1785,6 +1834,14 @@ h4 {
   .feedback .main-prev-btn {
     left: -1rem;
   }
+  .feedback-heading {
+    margin-top: 4rem;
+  }
+
+  .feedback-text, .feedback-signature {
+    display: none;
+  }
+
   .often-questions {
     padding: 6rem 0 4rem 0;
   }
@@ -1801,6 +1858,7 @@ h4 {
   }
   .calc-price {
     margin-top: 2rem;
+    
   }
   .popup-consultation .button-order,
   .popup-design .button-order {
@@ -1817,5 +1875,8 @@ h4 {
   .popup-content {
     padding: 3rem 3rem;
     width: 25rem;
+  }
+  .often-questions .accordion-block.active-content {
+    padding: 1rem;
   }
 }

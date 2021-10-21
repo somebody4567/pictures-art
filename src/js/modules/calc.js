@@ -4,24 +4,25 @@ const calc = (size, material, options, promocode, result) => {
           optionsBlock = document.querySelector(options),
           promocodeBlock = document.querySelector(promocode),
           resultBlock = document.querySelector(result);
-
+        
     let sum = 0;
 
     const calcFunc = () => {
         if ([sizeBlock, materialBlock].some(item => item.value == '')) {
             resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
         }
-
-        if ([sizeBlock, materialBlock].every(item => item.value != '') && promocodeBlock.value === 'IWANTPOPART') {
-            resultBlock.textContent = Math.round(sum * 0.7);
-        } else {
+        if ([sizeBlock, materialBlock].every(item => item.value != '') && promocodeBlock.value != 'IWANTPOPART') {
             sum = Math.round((+sizeBlock.value) * (+materialBlock.value) + (+optionsBlock.value));
-            resultBlock.textContent = sum;
+            resultBlock.textContent = `${sum}руб`;
+            promocodeBlock.style.color = '';
+            resultBlock.style.color = '';
         }
-
-        /* if (sizeBlock.value == '' || materialBlock.value == '') {
-            resultBlock.textContent = "Пожалуйста, выберите размер и материал картины";
-        } */
+        if ([sizeBlock, materialBlock].every(item => item.value != '') && promocodeBlock.value.toUpperCase() == 'IWANTPOPART') {
+            sum = Math.round(sum * 0.7);
+            resultBlock.textContent = `${sum}руб`;
+            promocodeBlock.style.color = 'green';
+            resultBlock.style.color = 'green';
+        } 
     };
 
     sizeBlock.addEventListener('change', calcFunc);

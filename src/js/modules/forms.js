@@ -72,17 +72,15 @@ const forms = (state) => {
 
             const formData = new FormData(item);
             if (item.classList.contains('calc_form')) {
-                console.log(true);
                 formData.append('totalPrice', document.querySelector('.calc-price').textContent);
                 for (let key in state) {
                     formData.append(key, state[key]);
                 }
             }
             postData(adress, formData)
-                .then((data) => {
+                .then(() => {
                     statusImg.src = messages.ok;
                     statusText.textContent = messages.success;
-                    console.log(data);
                 })
                 .catch(() => {
                     statusImg.src = messages.fail;

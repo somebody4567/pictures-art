@@ -6,7 +6,6 @@ import accordion from './modules/accordion';
 import forms from './modules/forms';
 import mask from './modules/mask';
 import checkTextInputs from './modules/checkTextInputs';
-import loadContent from './modules/loadContent';
 import getStyleBlocks from './modules/getStyleBlocks';
 import calc from './modules/calc';
 import portfolio from './modules/portfolio';
@@ -30,10 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let pos = 0;
     inp.addEventListener('input', () => {
         pos++;
-        inp.value = 'Макс';
         inp.setSelectionRange(pos, pos);
     });
-    /* loadContent('.button-styles', '.styles-2'); */
     getStyleBlocks('.button-styles', '.styles .row');
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     portfolio('.portfolio-menu li', '.portfolio-block');
